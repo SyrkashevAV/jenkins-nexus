@@ -1,2 +1,5 @@
-FROM tomcat:7.0.92-jre8-alpine
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+WORKDIR /opt/tomcat
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.19/bin/apache-tomcat-10.1.19.tar.gz
+RUN tar zxvf apache-tomcat-*.tar.gz
+EXPOSE 8080
+CMD ["/opt/tomcat/apache-tomcat-10.1.18/bin/catalina.sh", "run"]
